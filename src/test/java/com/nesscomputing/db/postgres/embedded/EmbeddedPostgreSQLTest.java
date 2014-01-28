@@ -24,15 +24,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import org.junit.Test;
-
-import com.nesscomputing.db.postgres.embedded.EmbeddedPostgreSQL;
-import com.nesscomputing.testing.lessio.AllowExternalProcess;
-import com.nesscomputing.testing.lessio.AllowLocalFileAccess;
-import com.nesscomputing.testing.lessio.AllowNetworkAccess;
-import com.nesscomputing.testing.lessio.AllowNetworkListen;
+import org.kitei.testing.lessio.AllowExternalProcess;
+import org.kitei.testing.lessio.AllowTmpDirAccess;
+import org.kitei.testing.lessio.AllowNetworkAccess;
+import org.kitei.testing.lessio.AllowNetworkListen;
 
 @AllowExternalProcess
-@AllowLocalFileAccess(paths = {"*"})
+@AllowTmpDirAccess
 @AllowNetworkListen(ports = {0})
 @AllowNetworkAccess(endpoints = {"127.0.0.1:*"})
 public class EmbeddedPostgreSQLTest

@@ -239,9 +239,9 @@ public class EmbeddedPostgreSQL implements Closeable
         try (final Connection c = getPostgresDatabase().getConnection()) {
             try (final Statement s = c.createStatement()) {
                 try (final ResultSet rs = s.executeQuery("SELECT 1")) { // NOPMD
-                    Preconditions.checkState(rs.next() == true, "expecting single row");
+                    Preconditions.checkState(rs.next(), "expecting single row");
                     Preconditions.checkState(1 == rs.getInt(1), "expecting 1");
-                    Preconditions.checkState(rs.next() == false, "expecting single row");
+                    Preconditions.checkState(!rs.next(), "expecting single row");
                 }
             }
         }
