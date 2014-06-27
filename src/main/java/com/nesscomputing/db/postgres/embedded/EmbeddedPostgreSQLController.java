@@ -35,18 +35,18 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
-import org.apache.commons.configuration.MapConfiguration;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.skife.jdbi.v2.DBI;
-import org.skife.jdbi.v2.Handle;
-import org.skife.jdbi.v2.tweak.HandleCallback;
-
 import com.nesscomputing.config.Config;
 import com.nesscomputing.migratory.Migratory;
 import com.nesscomputing.migratory.MigratoryConfig;
 import com.nesscomputing.migratory.MigratoryContext;
 import com.nesscomputing.migratory.locator.AbstractSqlResourceLocator;
 import com.nesscomputing.migratory.migration.MigrationPlan;
+
+import org.apache.commons.configuration.MapConfiguration;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.skife.jdbi.v2.DBI;
+import org.skife.jdbi.v2.Handle;
+import org.skife.jdbi.v2.tweak.HandleCallback;
 
 public class EmbeddedPostgreSQLController
 {
@@ -74,7 +74,7 @@ public class EmbeddedPostgreSQLController
      * Each schema set has its own database cluster.  The template1 database has the schema preloaded so that
      * each test case need only create a new database and not re-invoke Migratory.
      */
-    private synchronized static Cluster getCluster(URI baseUrl, String[] personalities) throws IOException
+    private static synchronized Cluster getCluster(URI baseUrl, String[] personalities) throws IOException
     {
         final Entry<URI, Set<String>> key = Maps.immutableEntry(baseUrl, (Set<String>)ImmutableSet.copyOf(personalities));
 

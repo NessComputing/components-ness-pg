@@ -21,10 +21,6 @@ import java.net.URL;
 
 import javax.annotation.Nonnull;
 
-import org.junit.rules.TestRule;
-
-import com.nesscomputing.config.Config;
-
 public class EmbeddedPostgresRules
 {
     /**
