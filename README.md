@@ -4,8 +4,8 @@ THIS REPOSITORY HAS BEEN REPLACED
 The new version of the code is located at [opentable/otj-pg-embedded](https://github.com/opentable/otj-pg-embedded), please use that instead!
 
 
-Ness Computing PostgreSQL CComponent
-====================================
+Ness Computing PostgreSQL Component
+===================================
 
 Component Charter
 -----------------
